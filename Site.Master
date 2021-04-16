@@ -1,0 +1,141 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Crick_Scores.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Crick Scores</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+ 
+  <link rel="stylesheet" href="~/assets/fonts/flat-icon/flaticon.css" />
+  <link rel="stylesheet" href="~/css/style.css" />
+
+     <script>
+         $(document).ready(function () {
+
+             $('button').click(function (e) {
+                 $('.collapse').collapse('hide');
+             });
+
+
+
+         });</script>
+
+
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+
+            </Scripts>
+        </asp:ScriptManager>
+
+  <nav class="navbar" style="position: sticky; top:0; background-color: #f3f3f3; margin-bottom: 0px;">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a runat="server" class="navbar-brand" href="~/" style="margin-left: 50px;"></a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav pull-right">
+              
+              <li><a runat="server" href="~/live"><span class="glyphicon glyphicon-eye-open"></span> Live Scores</a></li>
+                <li><a runat="server" href="~/results"><span class="glyphicon glyphicon-list-alt"></span> Results</a></li>
+              
+              <li><a runat="server" href="~/calendar"><span class="glyphicon glyphicon-th-list"></span> Calendar</a></li>
+              
+            </ul>
+          </div>
+        </nav>  
+
+
+        <div class="container-fluid body-content">
+             <div id="content-wrapper">
+
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+          
+          
+     <footer class="footer footer--bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 footer__left text-primary">
+            <center>
+              <img src="assets/images/logo.png">
+                <br />
+                <br />
+                <p class="text-primary">&copy; <%: DateTime.Now.Year %> - Crick Scores</p>
+             
+ 
+    <address>
+        Kimin Papum Pare<br />
+        A.P. - 791121<br />
+        Phone :
+        +91 8732009580
+    </address>
+
+    <address>
+        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@crickscores.com</a><br />
+        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@crickscores.com</a>
+    </address>
+            <!-- <a class="navbar-brand" href="#" style="float:center;"></a> -->
+            <!-- <p>Copyright <span>&copy;</span> Dart themes 2017</p>
+ -->          </center>
+          </div>
+          <div class="col-md-2 footer__link">
+            <li><a runat="server"  href="~/about">About</a></li>
+            <li><a runat="server" href="~/contact">Contact</a></li>
+            <li><a runat="server" href="#">Feedback</a></li>
+            <li><a runat="server" href="#">Help & Support</a></li>
+          </div>
+          <div class="col-md-2 footer__link">
+            <li><a runat="server" href="~/live">Live</a></li>
+              <li><a runat="server" href="~/results">Result</a></li>
+          
+            <li><a runat="server" href="~/calendar">Calendar</a></li>
+          </div>
+          <div class="col-md-4 footer__social-icons">
+            <center>
+            <li><a runat="server" href="#"><i class="flaticon-facebook-letter-logo"></i></a></li>
+            <li><a runat="server" href="#"><i class="flaticon-twitter-logo-silhouette"></i></a></li>
+            <li><a runat="server" href="#"><i class="flaticon-google-plus"></i></a></li>
+            <li><a runat="server" href="#"><i class="flaticon-pinterest-logo"></i></a></li>
+          </center>
+          </div>
+        </div>
+      </div>
+            </footer>
+        </div>
+            </div>
+
+    </form>
+</body>
+</html>
