@@ -26,7 +26,8 @@
               cricketMatches = serializer.DeserializeObject(wc.DownloadString("https://cricapi.com/api/cricketScore?apikey=FtFQ4cpD56RFXhJNHuR1RgWPICG3&unique_id="+matchid));
               Page.Cache.Add(number, cricketMatches, null, DateTime.Now.AddMinutes(3), Cache.NoSlidingExpiration, CacheItemPriority.Normal, null);
           }
-          DateTime dateTime = DateTime.Now;
+          var dateString = cricketMatches["provider"]["pubDate"];
+          DateTime dateTime = DateTime.Parse(dateString);
           int flag=1;
           string result;
 
